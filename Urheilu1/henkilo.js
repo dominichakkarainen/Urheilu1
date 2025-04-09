@@ -1,4 +1,4 @@
-// henkilo.js
+// henkilö-luokka, joka sisältää henkilötiedot
 
 class Henkilo {
   constructor(etunimet, sukunimi, kutsumanimi, syntymavuosi) {
@@ -8,15 +8,19 @@ class Henkilo {
     this.syntymavuosi = syntymavuosi;
   }
 
+  // hakee henkilön koko nimen
   getKokoNimi() {
     return `${this.etunimet} ${this.sukunimi}`;
   }
 
+  // hakee henkilön iän
   getIka() {
     const vuosi = new Date().getFullYear();
     return vuosi - this.syntymavuosi;
   }
 }
+
+// urheilija-luokka, joka sisältää henkilötiedot sekä urheilijan tiedot
 
 class Urheilija extends Henkilo {
   constructor(
@@ -81,6 +85,7 @@ class Urheilija extends Henkilo {
   }
 }
 
+// määritetyt urheilijat
 const urheilija1 = new Urheilija(
   "Mikael",
   "Granlund",
